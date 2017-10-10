@@ -7,17 +7,17 @@ I couldn't find a good solution for this problem so after studying several discu
 
 I will upload almost unchanged code which basically converts models to C++. So you can modify it for your purposes.  
 
-For more info see code and docstring.
+For more info see the code and docstring.
 
 ## Usage
 
-Let's start with [dmlc xgboost](https://github.com/dmlc/xgboost) regressor:  
+Let's start with the [dmlc xgboost](https://github.com/dmlc/xgboost) regressor:  
 
 ```
 xgb_get_code(model=xgb_model, spacer_base="    ", print_only=False, path=path, lang='C', packing_in_line=True)
 ```
 
-This command will create a text file "xgb_dump.txt", which you can find in repo as an example. 
+This command will create a text file "xgb_dump.txt", which you can find in a repo as an example. 
 
 ## Dependencies  
 * python 3.6
