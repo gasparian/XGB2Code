@@ -11,7 +11,7 @@ For more info see code and docstring.
 
 ## Usage
 
-Let's start with [dmlc xgboost](https://github.com/dmlc/xgboost):  
+Let's start with [dmlc xgboost](https://github.com/dmlc/xgboost) regressor:  
 
 ```
 xgb_get_code(model=xgb_model, spacer_base="    ", print_only=False, path=path, lang='C')
