@@ -14,7 +14,7 @@ For more info see code and docstring.
 Let's start with [dmlc xgboost](https://github.com/dmlc/xgboost) regressor:  
 
 ```
-xgb_get_code(model=xgb_model, spacer_base="    ", print_only=False, path=path, lang='C')
+xgb_get_code(model=xgb_model, spacer_base="    ", print_only=False, path=path, lang='C', packing_in_line=True)
 ```
 
 This command will create a text file "xgb_dump.txt", which you can find in repo as an example. 
