@@ -1,8 +1,24 @@
 import re
 
-def xgb_get_code(model, spacer_base="    ", print_only=True, path=None, lang='C', packing_in_line=True):
+def xgb_get_code(model=None, spacer_base="    ", print_only=True, path=None, lang='C', packing_in_line=True):
 
-	#xgb_get_code(model=xgb_model, spacer_base="    ", print_only=False, path=path, lang='C')
+	"""Trained ML model exporting.
+    Parameters
+    ----------
+    model : model instance
+        xgboost regressor model.
+    spacer_base : str
+        initial spaces to decorate code for readability
+    print_only : bool/str, (True / False / 'both')
+        Prints output code or dumps it to text file
+    path : str
+        path where code will be saved
+    lang : str, default 'C', ('C' / 'Python')
+        in which language to convert
+    packing_in_line : bool
+    	If True, each tree will be in one line.
+
+    """
     
     def recurse_print(left, right, threshold, features, value, node, depth):
         if lang == 'C':
