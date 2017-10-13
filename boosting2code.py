@@ -1,4 +1,6 @@
 import re
+from datetime import datetime
+current_time = re.sub(':', '-', re.sub(' ', '_', datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
 
 def xgb_get_code(model=None, spacer_base="    ", print_only=True, path=None, lang='C', packing_in_line=True):
 
@@ -178,10 +180,15 @@ def xgb_get_code(model=None, spacer_base="    ", print_only=True, path=None, lan
             if features_names:
                 for name in features_names:
                     f.write('    ' + name + ',\n')
-            f.write('\tleaf);\ncurrentGcorr_tree_grs=currentG_grs-leaf-0.5;\n')
+            f.write('\tleaf);\n')
         elif lang == 'Py':
             f.write('    return leaf\n\n')
             f.write('leaf = 0\n\n')
+            f.write('leaf = func(\n')
+            if features_names:
+                for name in features_names:
+                    f.write('    ' + name + ',\n')
+            f.write('\tleaf)\n')
             
     forest = model.booster().get_dump()
         
@@ -201,7 +208,7 @@ def xgb_get_code(model=None, spacer_base="    ", print_only=True, path=None, lan
         print_foot(lang)
     elif print_only == 'both':
         print_head(lang, features_names)
-        with open(path + '/xgb_dump.txt', 'w') as f:
+        with open(path + '/xgb_dump_%s.txt' % current_time, 'w') as f:
             txt_head(lang, features_names)
             if type(forest) != str:
                 for tree_ in forest:
@@ -218,7 +225,7 @@ def xgb_get_code(model=None, spacer_base="    ", print_only=True, path=None, lan
             print_foot(lang)
             txt_foot(lang)
     else:
-        with open(path + '/xgb_dump.txt', 'w') as f:
+        with open(path + '/xgb_dump_%s.txt' % current_time, 'w') as f:
             txt_head(lang, features_names)
             if type(forest) != str:
                 for tree_ in forest:
