@@ -70,4 +70,3 @@ leaf = func(
     freq_2_None_12,
     None_12_2,
 	leaf);
-currentGcorr_tree_grs=currentG_grs-leaf-0.5;
