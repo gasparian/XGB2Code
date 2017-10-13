@@ -2,7 +2,7 @@
 
 Here I will upload Python code for exporting trained ML models to executable code on different languages.  
 
-The story began, when i really needed to export trained xgboost model to C++ code to use it inside the CVG (corilois vibrating gyroscope) as a temperature correction algorithm.  
+The story began, when i really needed to export trained xgboost model to C++ code to use it inside the CVG (coriolis vibrating gyroscope) as a temperature correction algorithm.  
 I couldn't find a good solution for this problem so after studying several discussions on stackoverflow I decided to make it by my own.
 
 I will upload almost unchanged code which basically converts models to C++. So you can modify it for your purposes.  
