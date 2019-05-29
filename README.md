@@ -1,9 +1,4 @@
-# XGBoost trees to plain C/C++/Python converter
-
-I couldn't find a good solution for exporting trained tree based gradient boosting models to C/C++ code, so after studying several discussions on stackoverflow I decided to make it by my own.
-Modify it for your purposes!
-
-For more info see the code and docstring.
+# XGBoost trees to plain C/Python converter
 
 ## Usage
 
